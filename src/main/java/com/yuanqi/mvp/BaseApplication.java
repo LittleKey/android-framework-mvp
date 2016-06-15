@@ -32,7 +32,10 @@ public class BaseApplication extends Application {
     return mImageManager;
   }
 
-  private void initializeImage() {
+  public void initializeImage() {
+    if (mImageManager != null) {
+      mImageManager.shutdown();
+    }
     mImageManager = new ImageManager(newImageConfig());
   }
 
