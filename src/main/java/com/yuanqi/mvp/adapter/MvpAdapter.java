@@ -50,7 +50,7 @@ public abstract class MvpAdapter<T> extends HeaderFooterAdapter<T>
     setData(mList.getItems());
   }
 
-  private void tryPreLoad(int position, int totalPosition) {
+  public void tryPreLoad(int position, int totalPosition) {
     if (mList != null && mList.hasMore()) {
       int offset = totalPosition - position - 1;
       if (offset == DEFAULT_PRELOAD_OFFSET || offset == 0) {
