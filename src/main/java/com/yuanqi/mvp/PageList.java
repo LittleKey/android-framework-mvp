@@ -111,7 +111,7 @@ public class PageList<R, T> extends DataList<T>
     if (mNextPage.ongoing()) {
       return;
     }
-    if (!clearData && !mNextPage.hasMore) {
+    if (!clearData && !hasMore()) {
       return;
     }
     mNextPage.clearData = clearData;
