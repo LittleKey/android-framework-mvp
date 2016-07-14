@@ -13,7 +13,7 @@ import com.yuanqi.mvp.widget.MvpRecyclerView;
  */
 public abstract class MvpAdapter<T> extends HeaderFooterAdapter<T>
     implements DataLoadObserver<T> {
-  private static final int DEFAULT_PRELOAD_OFFSET = 10;
+  private static final int DEFAULT_PRELOAD_OFFSET = 5;
   protected DataList<T> mList;
   private Handler mHandler;
 
