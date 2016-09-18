@@ -1,4 +1,4 @@
-package com.yuanqi.mvp.presenter;
+package me.littlekey.mvp.presenter;
 
 /**
  * Created by nengxiangzhou on 15/4/21.

@@ -1,8 +1,6 @@
-package com.yuanqi.mvp;
+package me.littlekey.mvp;
 
-import com.yuanqi.base.utils.CollectionUtils;
-import com.yuanqi.mvp.DataLoadObserver.Op;
-import com.yuanqi.mvp.DataLoadObserver.OpData;
+import me.littlekey.base.utils.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,21 +43,21 @@ public abstract class DataList<T> {
     return mProcessor != null ? mProcessor.generate(newData) : newData;
   }
 
-  protected void notifyLoadStart(Op op) {
+  protected void notifyLoadStart(DataLoadObserver.Op op) {
     mIsLoading = true;
     for (DataLoadObserver<T> observer : mObservers) {
       observer.onLoadStart(op);
     }
   }
 
-  protected void notifyLoadSuccess(Op op, OpData<T> opData) {
+  protected void notifyLoadSuccess(DataLoadObserver.Op op, DataLoadObserver.OpData<T> opData) {
     mIsLoading = false;
     for (DataLoadObserver<T> observer : mObservers) {
       observer.onLoadSuccess(op, opData);
     }
   }
 
-  protected void notifyLoadError(Op op, Exception e) {
+  protected void notifyLoadError(DataLoadObserver.Op op, Exception e) {
     mIsLoading = false;
     for (DataLoadObserver<T> observer : mObservers) {
       observer.onLoadError(op, e);

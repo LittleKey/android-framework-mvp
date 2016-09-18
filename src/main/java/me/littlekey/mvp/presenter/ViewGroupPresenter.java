@@ -1,4 +1,4 @@
-package com.yuanqi.mvp.presenter;
+package me.littlekey.mvp.presenter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,8 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.yuanqi.mvp.PageContext;
-import com.yuanqi.mvp.widget.MvpRecyclerView;
+import me.littlekey.mvp.PageContext;
+import me.littlekey.mvp.widget.MvpRecyclerView;
 
 /**
  * Created by nengxiangzhou on 15/4/20.

@@ -1,4 +1,4 @@
-package com.yuanqi.mvp.widget;
+package me.littlekey.mvp.widget;
 
 
 import android.content.Context;
@@ -6,12 +6,12 @@ import android.support.v4.widget.BaseSwipeRefreshLayout;
 import android.util.AttributeSet;
 import android.view.ViewGroup;
 
-import com.yuanqi.mvp.DataLoadObserver;
-import com.yuanqi.mvp.R;
-import com.yuanqi.mvp.adapter.HeaderFooterAdapter.ViewData;
-import com.yuanqi.mvp.adapter.MvpAdapter;
-import com.yuanqi.mvp.presenter.Presenter;
-import com.yuanqi.mvp.presenter.ViewGroupPresenter;
+import me.littlekey.mvp.DataLoadObserver;
+import me.littlekey.mvp.R;
+import me.littlekey.mvp.adapter.MvpAdapter;
+import me.littlekey.mvp.presenter.Presenter;
+import me.littlekey.mvp.presenter.ViewGroupPresenter;
+import me.littlekey.mvp.adapter.HeaderFooterAdapter;
 
 
 /**
@@ -22,7 +22,7 @@ public class MvpSwipeRefreshLayout<T> extends BaseSwipeRefreshLayout
     implements DataLoadObserver<T> {
   private MvpRecyclerView mRecyclerView;
   private MvpAdapter<T> mAdapter;
-  private ViewData mLoadMoreFooter;
+  private HeaderFooterAdapter.ViewData mLoadMoreFooter;
 
   public MvpSwipeRefreshLayout(Context context) {
     super(context);
@@ -47,7 +47,7 @@ public class MvpSwipeRefreshLayout<T> extends BaseSwipeRefreshLayout
   }
 
   public void setAdapter(MvpAdapter<T> adapter) {
-    mLoadMoreFooter = new ViewData() {
+    mLoadMoreFooter = new HeaderFooterAdapter.ViewData() {
       @Override
       public ViewGroupPresenter createPresenter(ViewGroup parent) {
         return new ViewGroupPresenter(parent, R.layout.footer_loading_more)

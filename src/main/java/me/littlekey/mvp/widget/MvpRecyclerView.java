@@ -1,4 +1,4 @@
-package com.yuanqi.mvp.widget;
+package me.littlekey.mvp.widget;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
@@ -14,10 +14,10 @@ import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.view.animation.LinearInterpolator;
 
-import com.yuanqi.base.ReadOnlyList;
-import com.yuanqi.base.utils.CollectionUtils;
-import com.yuanqi.mvp.adapter.HeaderFooterAdapter;
-import com.yuanqi.mvp.presenter.ViewGroupPresenter;
+import me.littlekey.base.ReadOnlyList;
+import me.littlekey.base.utils.CollectionUtils;
+import me.littlekey.mvp.adapter.HeaderFooterAdapter;
+import me.littlekey.mvp.presenter.ViewGroupPresenter;
 
 import java.util.ArrayList;
 import java.util.List;

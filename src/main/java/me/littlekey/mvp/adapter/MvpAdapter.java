@@ -1,11 +1,11 @@
-package com.yuanqi.mvp.adapter;
+package me.littlekey.mvp.adapter;
 
 import android.os.Handler;
 
-import com.yuanqi.base.utils.CollectionUtils;
-import com.yuanqi.mvp.DataList;
-import com.yuanqi.mvp.DataLoadObserver;
-import com.yuanqi.mvp.widget.MvpRecyclerView;
+import me.littlekey.base.utils.CollectionUtils;
+import me.littlekey.mvp.DataList;
+import me.littlekey.mvp.DataLoadObserver;
+import me.littlekey.mvp.widget.MvpRecyclerView;
 
 
 /**

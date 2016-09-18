@@ -1,12 +1,12 @@
-package com.yuanqi.mvp;
+package me.littlekey.mvp;
 
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
 import android.os.Environment;
 
-import com.yuanqi.network.ImageConfig;
-import com.yuanqi.network.ImageManager;
+import me.littlekey.network.ImageConfig;
+import me.littlekey.network.ImageManager;
 
 import java.io.File;
 

@@ -12,7 +12,7 @@ import android.graphics.drawable.Drawable;
 import android.support.annotation.IntDef;
 import android.view.View;
 
-import com.yuanqi.base.utils.FormatUtils;
+import me.littlekey.base.utils.FormatUtils;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

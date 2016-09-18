@@ -1,11 +1,11 @@
-package com.yuanqi.mvp.adapter;
+package me.littlekey.mvp.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.ViewGroup;
 
-import com.yuanqi.mvp.presenter.ViewGroupPresenter;
-import com.yuanqi.mvp.widget.MvpRecyclerView;
+import me.littlekey.mvp.presenter.ViewGroupPresenter;
+import me.littlekey.mvp.widget.MvpRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;

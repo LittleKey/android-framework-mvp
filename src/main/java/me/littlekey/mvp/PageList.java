@@ -1,14 +1,12 @@
-package com.yuanqi.mvp;
+package me.littlekey.mvp;
 
 import android.support.annotation.NonNull;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.yuanqi.base.utils.LinkedHashTreeSet;
-import com.yuanqi.mvp.DataLoadObserver.Op;
-import com.yuanqi.mvp.DataLoadObserver.OpData;
-import com.yuanqi.network.ApiRequest;
-import com.yuanqi.network.RequestStatus;
+import me.littlekey.base.utils.LinkedHashTreeSet;
+import me.littlekey.network.ApiRequest;
+import me.littlekey.network.RequestStatus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,8 +28,8 @@ public class PageList<R, T> extends DataList<T>
       return ongoing;
     }
 
-    public Op nextOp() {
-      return clearData ? Op.REFRESH : Op.ADD;
+    public DataLoadObserver.Op nextOp() {
+      return clearData ? DataLoadObserver.Op.REFRESH : DataLoadObserver.Op.ADD;
     }
   }
 
@@ -162,15 +160,15 @@ public class PageList<R, T> extends DataList<T>
     } else if (currentPage.request.getCacheEntry().refreshNeeded()) {
       currentPage.status = RequestStatus.HIT_CACHE_AND_NEED_REFRESH;
     }
-    Op op = currentPage.nextOp();
+    DataLoadObserver.Op op = currentPage.nextOp();
 
-    if (op == Op.REFRESH) {
+    if (op == DataLoadObserver.Op.REFRESH) {
       mProcessedItems.clear();
     }
     List<T> newItems = getItemsFromResponse(response);
     List<T> newProcessedItems = processItems(newItems);
     T lastItem = mProcessedItems.isEmpty() ? null : mProcessedItems.get(mProcessedItems.size() - 1);
-    OpData<T> opData = new OpData<>(mProcessedItems.size(), null, lastItem, newProcessedItems);
+    DataLoadObserver.OpData<T> opData = new DataLoadObserver.OpData<>(mProcessedItems.size(), null, lastItem, newProcessedItems);
     mProcessedItems.addAll(newProcessedItems);
     notifyLoadSuccess(op, opData);
     if (currentPage.status == RequestStatus.HIT_CACHE_AND_NEED_REFRESH) {

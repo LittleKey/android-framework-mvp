@@ -1,4 +1,4 @@
-package com.yuanqi.mvp;
+package me.littlekey.mvp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

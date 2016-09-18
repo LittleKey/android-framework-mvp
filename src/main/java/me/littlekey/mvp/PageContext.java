@@ -1,6 +1,6 @@
-package com.yuanqi.mvp;
+package me.littlekey.mvp;
 
-import com.yuanqi.mvp.widget.MvpRecyclerView;
+import me.littlekey.mvp.widget.MvpRecyclerView;
 
 /**
  * Created by nengxiangzhou on 15/7/22.
