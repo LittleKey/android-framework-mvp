@@ -178,8 +178,9 @@ public class PageList<R, T> extends DataList<T>
       }
     } else {
       mNextPage = new PageInfo<>();
-      mNextPage.request = getNextRequestFromResponse(response);
-      mNextPage.hasMore = getHasMoreFromResponse(response);
+      if (mNextPage.hasMore = getHasMoreFromResponse(response)) {
+        mNextPage.request = getNextRequestFromResponse(response);
+      }
     }
   }
 }
