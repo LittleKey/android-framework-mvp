@@ -3,6 +3,8 @@ package me.littlekey.mvp;
 import android.support.annotation.NonNull;
 
 import com.android.volley.Response;
+
+import me.littlekey.base.ReadOnlyList;
 import me.littlekey.network.ApiRequest;
 
 import java.util.List;
@@ -22,5 +24,5 @@ public interface DataGenerator<R, T> {
 
   boolean getHasMoreFromResponse(R response);
 
-  List<T> getItemsFromResponse(@NonNull R response);
+  List<T> getItemsFromResponse(@NonNull R response, ReadOnlyList<T> roProcessedItems);
 }

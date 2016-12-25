@@ -4,6 +4,8 @@ import android.support.annotation.NonNull;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+
+import me.littlekey.base.ReadOnlyList;
 import me.littlekey.base.utils.LinkedHashTreeSet;
 import me.littlekey.network.ApiRequest;
 import me.littlekey.network.RequestStatus;
@@ -101,8 +103,8 @@ public class PageList<R, T> extends DataList<T>
     return mDataGenerator.getHasMoreFromResponse(response);
   }
 
-  private List<T> getItemsFromResponse(@NonNull R response) {
-    return mDataGenerator.getItemsFromResponse(response);
+  private List<T> getItemsFromResponse(@NonNull R response, ReadOnlyList<T> roProcessedItems) {
+    return mDataGenerator.getItemsFromResponse(response, roProcessedItems);
   }
 
   private void loadData(boolean clearData) {
@@ -165,7 +167,17 @@ public class PageList<R, T> extends DataList<T>
     if (op == DataLoadObserver.Op.REFRESH) {
       mProcessedItems.clear();
     }
-    List<T> newItems = getItemsFromResponse(response);
+    List<T> newItems = getItemsFromResponse(response, new ReadOnlyList<T>() {
+      @Override
+      public T getItem(int position) {
+        return mProcessedItems.get(position);
+      }
+
+      @Override
+      public int size() {
+        return mProcessedItems.size();
+      }
+    });
     List<T> newProcessedItems = processItems(newItems);
     T lastItem = mProcessedItems.isEmpty() ? null : mProcessedItems.get(mProcessedItems.size() - 1);
     DataLoadObserver.OpData<T> opData = new DataLoadObserver.OpData<>(mProcessedItems.size(), null, lastItem, newProcessedItems);

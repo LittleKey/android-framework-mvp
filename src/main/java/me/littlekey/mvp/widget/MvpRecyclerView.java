@@ -128,6 +128,12 @@ public class MvpRecyclerView extends RecyclerView {
 //      setScrollItemAnimation(holder.itemView, position);
     }
 
+    @Override
+    public void onViewRecycled(ViewHolder holder) {
+      super.onViewRecycled(holder);
+      holder.presenter.unbind();
+    }
+
     private void setScrollItemAnimation(View view, int position) {
       if (position > lastPosition)
       {

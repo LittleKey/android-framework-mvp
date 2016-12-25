@@ -29,6 +29,9 @@ public class ViewGroupPresenter {
 
   public ViewGroupPresenter(ViewGroup parent, int layout, PageContext pageContext) {
     this((ViewGroup) LayoutInflater.from(parent.getContext()).inflate(layout, parent, false), pageContext);
+    if (this.pageContext.layoutManager == null && parent instanceof RecyclerView) {
+      this.pageContext.layoutManager = ((RecyclerView) parent).getLayoutManager();
+    }
   }
 
   public ViewGroupPresenter(ViewGroup parent, int layout) {
