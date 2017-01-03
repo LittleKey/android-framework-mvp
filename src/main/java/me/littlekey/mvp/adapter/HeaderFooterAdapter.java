@@ -214,7 +214,7 @@ public abstract class HeaderFooterAdapter<T> extends MvpRecyclerView.Adapter<T> 
     super.onBindViewHolder(holder, position);
   }
 
-  protected abstract ViewGroupPresenter onCreateDataViewPresenter(ViewGroup parent, int ViewType);
+  protected abstract ViewGroupPresenter onCreateDataViewPresenter(ViewGroup parent, int viewType);
 
   public abstract int getDataItemViewType(int position);
 
